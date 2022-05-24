@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--fontpadrao);
+  color: var(--cortext);
+}
+
+:root {
+  --corbtn-delete: #20fc8f;
+  --corbtn-edit: #f36e5dd7;
+  --corsecundary: #6a8d73;
+  --corback: #f4f4f9;
+  --cortext: #2e3532;
+
+  --fontpadrao: "Poppins", sans-serif;
+}
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-image: url(../images/fundo.jpg);
+  background-position: center right;
+  background-size: cover;
+}
+
+.first-column {
+  width: 40vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 240px;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+#icon {
+  width: 80px;
+  /* position: absolute;
+  top: 80px;
+  left: 80px; */
+  filter: opacity(0.5) drop-shadow(0 0 0 #397c4a);
+}
+
+.title {
+  font-size: 50px;
+  font-weight: 500;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.second-column {
+  width: 70vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 30px;
+}
+
+.text-02 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 180px;
+}
+
+#pag-second {
+  background-color: rgba(211, 211, 211, 0.562);
+  padding: 0px 20px 20px 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 180px;
+}
+
+h2 {
+  font-size: 42.5px;
+  margin-bottom: 4px;
+}
+
+button {
+  display: block;
+  width: 710px;
+  margin-top: 20px;
+  height: 40px;
+  padding: 5px;
+  border: none;
+  background-color: var(--corsecundary);
+  font-size: 18px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+input {
+  width: 350px;
+  height: 40px;
+  border-radius: 6px;
+  border: 0.5px solid var(--cortext);
+}
+
+a {
+  text-decoration: none;
+  color: var(--cortext);
+}
+
+a:hover {
+  color: var(--corsecundary);
+  cursor: pointer;
+}
+
+.account {
+  width: 710px;
+  height: 40px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.cadastro {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-image: url(../images/fundo.02.jpg);
+  background-position: center left;
+  background-size: cover;
+}
+
+#icon-2 {
+  width: 60px;
+  float: left;
+  filter: opacity(0.5) drop-shadow(0 0 0 #397c4a);
+}
+
+header {
+  width: 69vw;
+  /* overflow: auto; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 25px;
+  margin: 1% 15%;
+}
+
+.header-3 {
+  display: flex;
+  align-items: center;
+}
+
+h3 {
+  display: flex;
+}
+.informations {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0px;
+}
+
+.informations-item-00 {
+  width: 115px;
+  height: 40px;
+  border-radius: 6px;
+  border: 0.5px solid var(--cortext);
+  border-radius: 6px 6px;
+  margin-left: 0px;
+}
+
+.informations-item-01 {
+  width: 390px;
+  height: 40px;
+  border-radius: 6px;
+  border: 0.5px solid var(--cortext);
+  border-radius: 6px 6px;
+}
+
+.informations-item-02 {
+  width: 390px;
+  height: 40px;
+  border-radius: 6px;
+  border: 0.5px solid var(--cortext);
+  border-radius: 6px 0px 0px 6px;
+  margin: 0px -5px 0px 0px;
+}
+
+.btn-tosave {
+  width: 230px;
+  height: 40px;
+  border: none;
+  background-color: var(--corsecundary);
+  font-size: 14px;
+  border-radius: 0px 6px 6px 0px;
+  font-weight: 700;
+  margin: 0px 0px 0px 0px;
+  cursor: pointer;
+}
+
+.btn-atualizar {
+  width: 110px;
+  height: 40px;
+  padding: 5px;
+  border: none;
+  background-color: #6a8d73a6;
+  font-size: 14px;
+  border-radius: 0px 6px 6px 0px;
+  font-weight: 900;
+  margin-top: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.btn-cancelar {
+  width: 110px;
+  height: 40px;
+  padding: 5px;
+  border: none;
+  background-color: #e74d3cb4;
+  font-size: 14px;
+  border-radius: 6px;
+  font-weight: 900;
+  margin-top: 0;
+  display: none;
+  cursor: pointer;
+}
+
+table {
+  width: 80vw;
+  margin: auto;
+}
+
+th,
+tr,
+td {
+  border-top: 1px solid rgba(128, 128, 128, 0.37);
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: rgba(128, 128, 128, 0.37);
+}
+
+.width-table-item01 {
+  width: 100px;
+  text-align: center;
+}
+
+.width-table-item02 {
+  width: 380px;
+  text-align: center;
+}
+
+.width-table-item03 {
+  width: 380px;
+  text-align: center;
+}
+
+.width-table-item04 {
+  text-align: center;
+}
+
+table > tr:hover {
+  background-color: lightgrey;
+}
+
+.btn-delete {
+  width: 80px;
+  height: 30px;
+  border: none;
+  background-color: var(--corbtn-delete);
+  font-size: 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  margin-top: 0;
+  float: left;
+  margin: 0px 5px;
+}
+
+.btn-edit {
+  width: 80px;
+  height: 30px;
+  border: none;
+  background-color: var(--corbtn-edit);
+  font-size: 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  margin-top: 0;
+  float: left;
+}
+
+.align-item {
+  text-align: center;
+}
+
+.btn-sair {
+  width: 50px;
+  font-size: 20px;
+  /* position: absolute;
+    right: 400px; */
+}
+
+.position-btn-sair {
+  float: right;
+}
+
+.form-control {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-control small {
+  position: absolute;
+  bottom: -20px;
+  left: 10px;
+  visibility: hidden;
+}
+
+.form-control i {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  visibility: hidden;
+}
+
+/* Error and Success */
+.form-control.success input {
+  border-color: #2ecc71;
+}
+
+.form-control.error input {
+  border-color: #e74c3c;
+}
+
+.form-control.success i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.form-control.error small {
+  visibility: visible;
+  color: #e74c3c;
+}
+
+#msgError {
+  text-align: center;
+  color: #e74c3c;
+  background-color: #e0a7a0;
+  padding: 8px;
+  border-radius: 6px;
+  display: none;
+  margin-top: 20px;
+}
+
+#msgSuccess {
+  text-align: center;
+  color: #2ecc71;
+  background-color: rgb(197, 241, 197);
+  padding: 8px;
+  border-radius: 4px;
+  display: none;
+  margin-top: 5px;
+}

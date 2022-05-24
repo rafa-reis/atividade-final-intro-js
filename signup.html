@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="shortcut icon"
+      href="images/icon-logo2.png"
+      type="image/x-icon"
+    />
+    <title>myTasks</title>
+  </head>
+  <body>
+    <main class="cadastro">
+      <section class="first-column">
+        <div class="title">
+          <img id="icon" src="images/icon-logo2.png" alt="icon-grafico" />
+          <p>rápido.</p>
+          <p>fácil.</p>
+          <p>& grátis.</p>
+          <p class="subtitle">não perca tempo. crie sua conta agora.</p>
+        </div>
+      </section>
+
+      <section class="second-column">
+        <div id="pag-second" class="text-02">
+          <h2>CRIAR CONTA</h2>
+
+          <form id="form">
+            <div class="form-control">
+              <label for="username">apelido</label>
+              <input
+                class="account"
+                id="username"
+                type="text"
+                placeholder="   digite seu username"
+              />
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+
+            <div class="form-control">
+              <label for="email">email</label>
+              <input
+                class="account"
+                id="email"
+                type="email"
+                placeholder="   digite seu e-mail"
+              />
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+
+            <div class="form-control">
+              <label for="password">senha</label>
+              <input
+                class="account"
+                id="password"
+                type="password"
+                placeholder="   digite sua senha"
+              />
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+
+            <div class="form-control">
+              <label for="password-confirmation">confirme sua senha</label>
+              <input
+                class="account"
+                id="password-confirmation"
+                type="password"
+                placeholder="   digite sua senha novamente"
+              />
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+
+            <div id="msgError"></div>
+            <div id="msgSuccess"></div>
+            <button id="btn-signup" type="submit">CRIAR CONTA AGORA</button>
+          </form>
+          <a href="index.html">voltar</a>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://kit.fontawesome.com/f9e19193d6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/signup.js" defer></script>
+  </body>
+</html>

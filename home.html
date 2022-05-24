@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="shortcut icon"
+      href="images/icon-logo2.png"
+      type="image/x-icon"
+    />
+    <title>myTasks</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-3">
+        <img id="icon-2" src="images/icon-logo2.png" alt="icon-grafico" />
+        <h3 id="logado"></h3>
+      </div>
+
+      <div><button class="btn-sair" id="btn-sair">sair</button></div>
+    </header>
+
+    <div class="informations">
+      <form id="form-cadastro">
+        <input
+          class="informations-item-00"
+          id="input-codigo"
+          type="text"
+          placeholder="   código"
+          required
+        />
+        <input
+          class="informations-item-01"
+          id="input-descricao"
+          type="text"
+          placeholder="   descrição"
+          required
+        />
+        <input
+          class="informations-item-02"
+          id="input-detalhamento"
+          type="text"
+          placeholder="   detalhamento"
+        />
+
+        <input
+          type="submit"
+          value="Salvar"
+          id="btn-salvar"
+          class="btn-tosave"
+        />
+        <input
+          type="submit"
+          value="Atualizar"
+          id="btn-atualizar"
+          class="btn-atualizar"
+        />
+        <input
+          type="submit"
+          value="Cancelar"
+          id="btn-cancelar"
+          class="btn-cancelar"
+        />
+      </form>
+    </div>
+
+    <div>
+      <table id="tabela-tarefas">
+        <tr>
+          <th class="width-table-item01">#</th>
+          <th class="width-table-item02">Descrição</th>
+          <th class="width-table-item03">Detalhamento</th>
+          <th class="width-table-item04">Ação</th>
+        </tr>
+      </table>
+    </div>
+    <script src="js/home.js"></script>
+  </body>
+</html>
