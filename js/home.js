@@ -138,7 +138,6 @@ function apagarTarefa(codigoID) {
       }
     }
 
-    // localStorage.clear();
     salvarNoStorage(listaRegistros);
   } else {
     return;
