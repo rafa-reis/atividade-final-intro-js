@@ -1,19 +1,7 @@
 let userLogado = JSON.parse(localStorage.getItem("userLogado"));
-console.log(userLogado)
 
 let logado = document.getElementById("logado");
 logado.innerHTML = `opa, ${userLogado.nome}!`;
-
-// let listaUsuarios = JSON.parse(window.localStorage.getItem('listUser'))
-// console.log(listaUsuarios)
-
-// let dadosUsuario = listaUsuarios.find((usuario) => usuario.emailCad === userLogado.email)
-// console.log(dadosUsuario)
-
-// let tarefas = localStorage.getItem('Minhas Tarefas')
-// console.log(tarefas)
-
-// dadosUsuario.tarefas.push(novorecado);
 
 if (localStorage.getItem("token") == null) {
   alert("Você precisa estar logado para acessar essa página!");
@@ -36,14 +24,14 @@ formulario.addEventListener("submit", (e) => {
   adicionarNovaTarefa();
 });
 
-document.addEventListener("DOMContentLoaded", pegarDadosStorage());
+document.addEventListener("DOMContentLoaded", pegarDadosStorage);
 
 botaoCancelar.addEventListener("click", cancelarEdicao);
 
 botaoSair.addEventListener("click", sair);
 
 function adicionarNovaTarefa() {
-  let listaTarefas = JSON.parse(localStorage.getItem("Minhas Tarefas")) || [];
+  let listaTarefas = buscarRecadosNoStorage();
 
   let codigoID = inputCodigo.value;
 
@@ -62,15 +50,15 @@ function adicionarNovaTarefa() {
   let descricaoTarefa = inputDescricao.value;
   let detalhamentoTarefa = inputDetalhamento.value;
 
-  let tarefa = {
+  let recados = {
     codigoID,
     descricaoTarefa,
     detalhamentoTarefa,
   };
 
-  listaTarefas.push(tarefa);
+  listaTarefas.push(recados);
 
-  salvarNaTabela(tarefa);
+  salvarNaTabela(recados);
   limparCampos();
   salvarNoStorage(listaTarefas);
 }
@@ -108,11 +96,18 @@ function limparCampos() {
 }
 
 function salvarNoStorage(listaTarefas) {
-  localStorage.setItem("Minhas Tarefas", JSON.stringify(listaTarefas));
+  let listaUsuarios = JSON.parse(window.localStorage.getItem("listUser"));
+  let dadosUsuario = listaUsuarios.findIndex(
+    (usuario) => usuario.emailCad === userLogado.email
+  );
+
+  listaUsuarios[dadosUsuario].recados = listaTarefas;
+
+  localStorage.setItem("listUser", JSON.stringify(listaUsuarios));
 }
 
 function pegarDadosStorage() {
-  let dadosStorage = JSON.parse(localStorage.getItem("Minhas Tarefas"));
+  let dadosStorage = buscarRecadosNoStorage();
 
   if (dadosStorage) {
     for (let item of dadosStorage) {
@@ -123,7 +118,7 @@ function pegarDadosStorage() {
 }
 
 function apagarTarefa(codigoID) {
-  let listaRegistros = JSON.parse(localStorage.getItem("Minhas Tarefas"));
+  let listaRegistros = buscarRecadosNoStorage();
   let indiceEncontrado = listaRegistros.findIndex(
     (tarefa) => tarefa.codigoID == codigoID
   );
@@ -143,7 +138,7 @@ function apagarTarefa(codigoID) {
       }
     }
 
-    localStorage.clear();
+    // localStorage.clear();
     salvarNoStorage(listaRegistros);
   } else {
     return;
@@ -166,7 +161,7 @@ function prepararEdicao(codigoID) {
   botaoAtualizar.setAttribute("onclick", `atualizarTarefa(${codigoID})`);
   botaoCancelar.setAttribute("style", "display: inline-block");
 
-  let listaTarefas = JSON.parse(localStorage.getItem("Minhas Tarefas"));
+  let listaTarefas = buscarRecadosNoStorage();
   let tarefaEncontrada = listaTarefas.find(
     (tarefa) => tarefa.codigoID == codigoID
   );
@@ -189,7 +184,7 @@ function atualizarTarefa(codigoID) {
     detalhamentoTarefa: novoDetalhamento,
   };
 
-  let listaTarefas = JSON.parse(localStorage.getItem("Minhas Tarefas"));
+  let listaTarefas = buscarRecadosNoStorage();
   let indiceEncontrado = listaTarefas.findIndex(
     (tarefa) => tarefa.codigoID == codigoID
   );
@@ -208,7 +203,7 @@ function atualizarTarefa(codigoID) {
     }
   }
 
-  localStorage.clear();
+  // localStorage.clear();
   salvarNoStorage(listaTarefas);
   cancelarEdicao();
 }
@@ -217,4 +212,15 @@ function sair() {
   localStorage.removeItem("token");
   localStorage.removeItem("userLogado");
   window.location.href = "index.html";
+}
+
+function buscarRecadosNoStorage() {
+  let listaUsuarios = JSON.parse(window.localStorage.getItem("listUser"));
+  console.log(listaUsuarios);
+  let dadosUsuario = listaUsuarios.findIndex(
+    (usuario) => usuario.emailCad === userLogado.email
+  );
+  console.log(dadosUsuario);
+
+  return listaUsuarios[dadosUsuario].recados || [];
 }

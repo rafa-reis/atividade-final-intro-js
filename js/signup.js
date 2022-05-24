@@ -88,11 +88,12 @@ button.addEventListener("click", () => {
     listUser.push({
       nameCad: username.value,
       emailCad: email.value,
-      passwordCad: password.value
+      passwordCad: password.value,
+      recados: []
     });
 
     localStorage.setItem("listUser", JSON.stringify(listUser));
-    alert("Parabéns! Cadastro realizado com sucesso.");
+    alert("Parabéns! Cadastro realizado com sucesso.")
   } else {
     alert("Valores inválidos. Tente novamente.");
   }
